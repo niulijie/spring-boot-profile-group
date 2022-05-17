@@ -1,11 +1,12 @@
 package com.atguigu.boot.springbootprofilegroup.config;
 
 import com.atguigu.boot.springbootprofilegroup.dto.Color;
+import com.niulijie.boot.service.HelloService;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
 
-@Component
+@Configuration
 public class MyConfig {
 
     @Profile("sec")
@@ -18,5 +19,11 @@ public class MyConfig {
     @Bean
     public Color green(){
         return new Color();
+    }
+
+    @Bean
+    public HelloService helloService(){
+        HelloService helloService = new HelloService();
+        return helloService;
     }
 }

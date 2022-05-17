@@ -9,3 +9,7 @@ spring:
         - sec
 server:
   port: 9001
+niulijie:
+  hello:
+    prefix: nice
+    suffix: 生活

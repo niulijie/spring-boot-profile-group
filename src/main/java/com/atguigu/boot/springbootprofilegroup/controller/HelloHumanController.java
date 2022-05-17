@@ -1,6 +1,7 @@
 package com.atguigu.boot.springbootprofilegroup.controller;
 
 import com.atguigu.boot.springbootprofilegroup.dto.Human;
+import com.niulijie.boot.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +23,9 @@ public class HelloHumanController {
     @Value("${os.name}")
     private String osName;
 
+    @Autowired
+    HelloService helloService;
+
     @GetMapping("/hello")
     public String getHello(){
         return human.getClass().toString();
@@ -36,5 +40,10 @@ public class HelloHumanController {
     @GetMapping("/msg")
     public String getMsg(){
         return msg+"+"+osName;
+    }
+
+    @GetMapping("/say")
+    public String sayHello(){
+        return helloService.sayHello("娄群");
     }
 }
