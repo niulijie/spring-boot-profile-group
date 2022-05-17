@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: myprod
+    group:
+      mytest :
+        - dev
+        - test
+      myprod:
+        - sec
+server:
+  port: 9001
